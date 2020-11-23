@@ -15,9 +15,11 @@ class CategoriesControllerTest < ActionController::TestCase
         get :new
         assert_response :success
 
-        post :create,
-        params: {category: { name: "Charles Samoy", description: "Personal"}}
-        assert_response :redirect
+        assert_difference 'Category.count', 1 do
+            post :create,
+            params: {category: { name: "Charles Samoy", description: "Personal"}}
+            assert_response :redirect
+        end
     end
 
     test "03. edit action should be a success" do

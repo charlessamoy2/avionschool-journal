@@ -21,11 +21,13 @@ class CategoryWorkflowTest < ActionDispatch::IntegrationTest
     test '02. update a current category' do
         get edit_category_path, params: {id: @category.id}
         assert_response :success
-
-        assert_changes '@category.name', from: @category.name, to: 'test edit' do
+        
+        assert_changes '@category.name' do
             post update_category_path, params: {id: @category.id, category: {name: 'test edit'}}
+            @category.reload
             assert_response :redirect
         end
+        
         follow_redirect!
         assert_response :success
     end
