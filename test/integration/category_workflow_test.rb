@@ -19,11 +19,11 @@ class CategoryWorkflowTest < ActionDispatch::IntegrationTest
     end
 
     test '02. update a current category' do
-        get edit_category_path, params: {id: @category.id}
+        get edit_category_path(:id => @category.id)
         assert_response :success
         
         assert_changes '@category.name' do
-            post update_category_path, params: {id: @category.id, category: {name: 'test edit'}}
+            post update_category_path(:id => @category.id), params: {category: {name: 'test edit'}}
             @category.reload
             assert_response :redirect
         end
@@ -33,11 +33,11 @@ class CategoryWorkflowTest < ActionDispatch::IntegrationTest
     end
 
     test '03. delete a current category' do
-        get edit_category_path, params: {id: @category.id}
+        get edit_category_path(:id => @category.id)
         assert_response :success
 
         assert_difference 'Category.count', -1 do
-            post delete_category_path, params: { id: @category.id}
+            get delete_category_path(:id => @category.id)
             assert_response :redirect
         end
         follow_redirect!
