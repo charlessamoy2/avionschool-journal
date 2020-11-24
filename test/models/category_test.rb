@@ -8,6 +8,11 @@ class CategoryTest < ActiveSupport::TestCase
   test 'valid category' do
     assert @category.valid?
   end
+  
+  test "Category.create with the params should work" do
+    @category = Category.create(name: 'Charles Samoy', description: "test")
+    assert :success
+  end
 
   test 'invalid without name' do
     @category.name = nil
