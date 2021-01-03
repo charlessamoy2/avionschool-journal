@@ -1,0 +1,211 @@
+// Place all the styles related to the Task controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$main-color: #b7d8eb;
+$secondary-color: #243746;
+$accent-color: #f8f7f3;
+$font-sans: Arial, Helvetica, sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-color;
+    font-family: $font-sans;
+    text-align: center;
+    box-sizing: border-box;
+    width: 1450px;
+    margin: auto;
+
+    header {
+        margin: 30px auto 0px auto;
+        position: relative;
+        height: 404px;
+        border: 3px solid $secondary-color;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        color: $accent-color;
+
+        background: {
+            image: asset_url("header-bg.png");
+            position: center;
+            repeat: no-repeat;
+        }
+
+        *:not(last-child) {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 70px;
+            margin: 0;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .btn-link-to {
+            width: 250px;
+            padding: 15px 30px;
+            background-color: $accent-color;
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+            border-radius: 20px;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    
+            &:hover {
+                background-color: transparentize($color: $accent-color, $amount: 0.2);
+            }
+
+            &:active {
+                color: lighten($secondary-color, 20%);
+            }
+        }
+    }
+
+    table {
+        width: 1450px;
+        margin: auto;
+        background: $accent-color;
+        border: solid 2px $secondary-color;
+        border-collapse: collapse;
+        border-radius: 5px;
+        table-layout: fixed;
+
+        th,td {
+            padding: 10px;
+            border: solid 1px $secondary-color;
+            max-height: 76px;
+            display: table-cell;
+        }
+
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            color: $secondary-color;
+
+            &:active {
+                color: lighten($secondary-color, 20%);
+            }
+        }
+    }
+
+    .show-container {
+        width: 1450px;
+        margin: 0px auto 30px auto;
+        display: inline-flex;
+        height: 504px;
+        background-color: $accent-color;
+        border: 2px $secondary-color solid;
+        
+        .left-show,.right-show {
+            height: 500px;
+            padding: 40px;
+        }
+
+        .left-show {
+            width: 75%;
+            text-align: justify;
+            background-color: $accent-color;
+            font-size: 1.10rem;
+            overflow-y: auto;
+
+            h2 {
+                margin-bottom: 10px;
+            }
+        }
+
+        .right-show {
+            width: 25%;
+            background-color: rgb(228, 228, 228);
+            vertical-align: middle;
+            padding-top: 75px;
+            font-size: 1.25rem;
+            border-left: 2px $secondary-color solid;
+
+            p {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 1450px;
+        min-height: 525px;
+        padding: 2px 200px;
+        border: 2px $secondary-color solid;
+        background-color: $accent-color;
+
+        ul {
+            list-style: none;
+            color: red;
+            font-weight: 800;
+        }
+
+        fieldset {
+            width: 900px;
+            border: none;
+            text-align: justify;
+            
+            * {
+                margin-bottom: 15px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 250px;
+                resize: none;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            input[type=text] {
+                width: 100%;
+                height: 25px;
+            }
+        }
+        input[type=submit] {
+            width: 200px;
+            background-color: $main-color;
+            border: 1px solid $secondary-color;
+            padding: 5px;
+            font-size: 1.1rem;
+
+            &:hover {
+                background-color: lighten($main-color, 10%);
+                cursor: pointer;
+            }
+
+            &:active {
+                color: darken($secondary-color, 10%);
+            }
+        }
+
+        #task_completed {
+            margin-left: 20px;
+        }
+    }
+}

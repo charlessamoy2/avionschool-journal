@@ -33,9 +33,11 @@ class CategoriesControllerTest < ActionController::TestCase
         assert_response :redirect
     end
     
-    test "05. delete action should be a redirect" do
-        post :delete, params: {id: @category.id}
-        assert_response :redirect
+    test "05. destroy action should be a success" do
+        assert_difference "Category.count", -1 do
+            post :destroy, params: {id: @category.id}
+            assert_response :redirect
+        end
     end
 
 end

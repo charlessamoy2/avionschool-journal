@@ -1,0 +1,40 @@
+<header>
+    <h1> Hi, Charles! </h1>
+    <%= link_to 'Add a new task', new_task_path, class: "btn-link-to"%>
+</header>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Deadline</th>
+            <th>Started</th>
+            <th>Completed</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @tasks.each do |task|%>
+            <tr>
+                <td>
+                    <%= link_to task_path(task) do %>
+                        <%= task.name%>
+                    <% end %>
+                </td>
+                <td><%= task.details%></td>
+                <td><%= change_date_format(task.deadline.strftime('%d/%m/%Y')) %></td>
+                <td><%= show_check_icon(task.started?) %></td>
+                <td><%= show_check_icon(task.completed?)%></td>
+                <td><%= task.category.name %>
+                <td>
+                    <%= link_to 'Edit', edit_task_path(task)%>
+                    |
+                    <%= link_to 'Delete', task_path(task), method: :delete, data: {confirm: "Are you sure?"}%>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,9 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  name: SampleTestOne
+  description: SampleDescOne
 
 two:
-  name: MyString
-  description: MyText
+  name: SampleTestTwo
+  description: SampleDescTwo
+
+personal:
+  name: Personal
+  description: All personal stuff
+
+business:
+  name: Business
+  description: All business related stuff

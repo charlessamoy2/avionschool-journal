@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
   def setup
-    @category = Category.new(name: 'Charles', description: 'Personal')
+    @category = Category.new(name: 'SampleTest', description: 'SampleTest')
   end
 
   test 'valid category' do
@@ -10,7 +10,7 @@ class CategoryTest < ActiveSupport::TestCase
   end
   
   test "Category.create with the params should work" do
-    @category = Category.create(name: 'Charles Samoy', description: "test")
+    @category = Category.create(name: 'SampleTest', description: "SampleTest")
     assert :success
   end
 

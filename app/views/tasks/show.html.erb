@@ -1,0 +1,27 @@
+<header>
+    <h1> <%= @task.name %> </h1>
+    <%= link_to 'Back to tasks', tasks_path, class: "btn-link-to"%>
+</header>
+
+<div class="show-container">
+    <div class="left-show">
+        <h2>Details:</h2>
+        <p><%= @task.details %></p>
+    </div>
+
+    <div class="right-show">
+        <h2>Category:</h2>
+        <p><%= @task.category.name %></p>
+        
+        <h2>Deadline:</h2>
+        <p><%= change_date_format(@task.deadline.strftime('%d/%m/%Y')) %></p>
+
+        <h2>Started:</h2>
+        <p><%= show_check_icon(@task.started?) %></p>
+
+        <h2>Completed:</h2>
+        <p><%= show_check_icon(@task.completed?) %></p>
+    </div>
+
+    
+</div>
