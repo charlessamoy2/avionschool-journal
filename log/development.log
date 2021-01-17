@@ -31610,3 +31610,73 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4940)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-01-18 01:50:50 +0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 735)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 5010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 24.9ms | ActiveRecord: 0.5ms | Allocations: 25528)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2021-01-18 01:50:52 +0800
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 195)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 224)
+  Rendered devise/confirmations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 5672)
+
+
+Started POST "/users/confirmation" for 127.0.0.1 at 2021-01-18 01:50:53 +0800
+Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"authenticity_token"=>"25Q8lJqtLJnQ3bbe8tIaLPz2Dsw+ljJdmkc5pg3xW6VFZF8yme24dnNw0aUZcvgCLiimjCwJnGhKauEBE7f3lw==", "user"=>{"email"=>""}, "commit"=>"Resend Confirmation"}
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 183)
+  Rendered devise/confirmations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 962)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 7095)
+
+
+Started POST "/users/confirmation" for 127.0.0.1 at 2021-01-18 01:50:54 +0800
+Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"authenticity_token"=>"bTXA3CI/nmzxgXwstkZDBujqnhViRDC0WUXRFYtO13BiA2/7ysr1ClESAk1eRkRSgTIWYl3N4CgYWQHNHPouUA==", "user"=>{"email"=>"charlessamoy@gmail.com"}, "commit"=>"Resend Confirmation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "charlessamoy@gmail.com"], ["LIMIT", 1]]
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 0.5ms | Allocations: 230)
+UserMailer#confirmation_instructions: processed outbound mail in 3.7ms
+Delivered mail 600478fe6a1d6_19376180153ab@DESKTOP-K4GFOCB.mail (10157.9ms)
+Date: Mon, 18 Jan 2021 01:50:54 +0800
+From: charlessamoy@gmail.com
+Reply-To: charlessamoy@gmail.com
+To: charlessamoy@gmail.com
+Message-ID: <600478fe6a1d6_19376180153ab@DESKTOP-K4GFOCB.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome charlessamoy@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=tCi3sT4DfixVx1D-sedd">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 10190ms (ActiveRecord: 0.2ms | Allocations: 21496)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-01-18 01:51:04 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 185)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4981)
+
+
