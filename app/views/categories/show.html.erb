@@ -1,11 +1,14 @@
-<div>
-    <h2>Name:</h2>
-    <p><%= @category.name %></p>
-</div>
+<header>
+    <h1> <%= @category.name %> </h1>
+    <%= link_to 'Back to categories', categories_path, class: "btn-link-to"%>
+</header>
 
-<div>
-    <h2>Description:</h2>
-    <p><%= @category.description %></p>
+<div class="show-container">
+    <div>
+        <h2>Name: </h2>
+        <p><%= @category.name%></p>
+        <h2>Description:</h2>
+        <p><%= @category.description %></p>
+    </div>
+    
 </div>
-
-<%= link_to 'Back to categories', categories_path, class: "btn-link-to"%>

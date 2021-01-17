@@ -1,6 +1,10 @@
 <header>
-    <h1> Hi, Charles! </h1>
-    <%= link_to 'Add a new task', new_task_path, class: "btn-link-to"%>
+    <h1> To-Do List </h1>
+    <div>
+        <%= link_to 'Add a new task', new_task_path, class: "btn-link-to"%>
+        <%= link_to 'Edit Categories', categories_path, class: "btn-link-to" %>
+    </div>
+    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "btn-sign-out" %>
 </header>
 
 <table>
