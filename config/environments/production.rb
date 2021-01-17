@@ -118,6 +118,7 @@ Rails.application.configure do
     :password => 'qh2lbr7y2984',
     :address => 'smtp.sendgrid.com',
     :port => 587,
+    :domain => "https://avionschool-journal-samoy.herokuapp.com/",
     :authentication => :plain,
     enable_starttls_auto: "true"
   }
