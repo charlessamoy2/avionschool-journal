@@ -1,9 +1,9 @@
 module TaskHelper
     def show_check_icon(boolean_value)
         if boolean_value then 
-          data = "<i class='fas fa-check'></i>"
+          data = "<div class=boolean-check>/</div>"
         else 
-          data = "<i class='fas fa-times'></i>"
+          data = "<div class=boolean-check>x</div>"
         end
         data.html_safe
     end
