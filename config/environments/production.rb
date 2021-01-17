@@ -111,15 +111,15 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "https://avionschool-journal-samoy.herokuapp.com/" }
+  config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net'}
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    :user_name => 'app198218189@heroku.com',
-    :password => 'qh2lbr7y2984',
-    :address => 'smtp.sendgrid.com',
-    :port => 587,
-    :domain => "https://avionschool-journal-samoy.herokuapp.com/",
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
     :authentication => :plain,
-    enable_starttls_auto: "true"
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
   }
 end
